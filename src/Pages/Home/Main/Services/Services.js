@@ -14,7 +14,7 @@ const Services = (props) => {
                         <Card.Text>{info.slice(0, 150)}</Card.Text>
                         <div className="d-flex align-items-baseline justify-content-between">
                             <Card.Text className="fw-bold">Price : ${price}</Card.Text>
-                            <Button variant="outline-danger"><i class="fas fa-shopping-cart"></i> Add Booking</Button>
+                            <Button variant="outline-danger"><i className="fas fa-shopping-cart"></i> Add Booking</Button>
                         </div>
                         
                     </Card.Body>

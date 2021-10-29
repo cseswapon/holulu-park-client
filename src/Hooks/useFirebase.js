@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,createUserWithEmailAndPassword,updateProfile,signInWithEmailAndPassword,signOut} from "firebase/auth";
 import initializeFirebase from "../firebase/firebase.init";
+initializeFirebase();
 const useFirebase = () => {
-    initializeFirebase();
-    const googleProvider = new GoogleAuthProvider();
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
     const [user, setUser] = useState('');
     const [error, setError] = useState('');
     // google singIn
     const googleSingin = () => {
         signInWithPopup(auth, googleProvider)
         .then((result) => {
-            console.log(result.user);
             setUser(result.user)
+            console.log(result.user)
         }).catch((error) => {
-            console.log(error.message)
             setError(error.message)
+            console.log(error.message)
         });
     }
     // email and password authentication

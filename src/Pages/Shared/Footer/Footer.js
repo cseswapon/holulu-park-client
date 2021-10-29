@@ -12,9 +12,9 @@ const Footer = () => {
                     <div className="col-md-4 col-sm-12">
                         <img src={logo} height="50" alt="logo not found" />
                         <div className="mt-3">
-                            <p className="fw-bolder text-primary"><i class="fas fa-map-marker-alt"></i> uttra-4, 99, Holulu Centre, Dhaka, Bangladesh</p>
-                            <p className="fw-bolder text-primary"><i class="fas fa-envelope"></i> abcdef@gmail.com</p>
-                            <p className="fw-bolder text-primary"><i class="fas fa-phone"></i> Hotline: 012 345 678</p>
+                            <p className="fw-bolder text-primary"><i className="fas fa-map-marker-alt"></i> uttra-4, 99, Holulu Centre, Dhaka, Bangladesh</p>
+                            <p className="fw-bolder text-primary"><i className="fas fa-envelope"></i> abcdef@gmail.com</p>
+                            <p className="fw-bolder text-primary"><i className="fas fa-phone"></i> Hotline: 012 345 678</p>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-12 text-center">
