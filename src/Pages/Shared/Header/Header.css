@@ -1,3 +1,12 @@
 .custom-bg {
-  background: linear-gradient(1deg, #2196f3 20%, rgb(3 80 244) 100%);
+  background: linear-gradient(1deg, #cde1f1 20%, rgb(251 252 255) 100%);
+}
+.navbar-link a {
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+.navbar-link a:hover {
+  border-bottom: 2px solid blue;
 }

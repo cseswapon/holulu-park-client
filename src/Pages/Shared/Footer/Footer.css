@@ -1,0 +1,6 @@
+.footer-link a {
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  margin: 10px;
+}
