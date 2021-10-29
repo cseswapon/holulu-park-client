@@ -1,9 +1,16 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
+import Manager from '../Main/Manager/Manager';
+import Service from '../Main/Service/Service';
+import Owlcaru from '../Owlcaru/Owlcaru';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is a home page</h1>
+            <Banner></Banner>
+            <Manager></Manager>
+            <Service></Service>
+            <Owlcaru></Owlcaru>
         </div>
     );
 };

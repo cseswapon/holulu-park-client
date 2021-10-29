@@ -1,0 +1,38 @@
+[
+    {
+        "name":"Bumper Car",
+        "info":"Bumper cars or dodgems are the generic names for a type of flat amusement ride consisting of multiple small electrically powered cars which draw power from the floor and/or ceiling, and which are turned on and off remotely by an operator.",
+        "img":"https://i.ibb.co/gy72DVy/Bumper-car-1-300x300.jpg",
+        "price":200
+    },
+    {
+        "name":"Cable Car",
+        "info":"Our city’s busy streets and steep hills can make for an exciting ride. Hold on tight. If you're holding onto the special poles on the outside of the car as you stand, please don't lean outward.",
+        "img":"https://i.ibb.co/1ZJ8wBS/Cable-Car-1-300x300.jpg",
+        "price":150
+    },
+    {
+        "name":"Cave Train",
+        "info":"How did our iconic amusement park become home to its famous cave people? Let’s go back nearly sixty years and discover the origin of our one-of-a-kind Cave Train Ride.",
+        "img":"https://i.ibb.co/rsh5p3z/Cave-Train-1-300x300.jpg",
+        "price":190
+    },
+    {
+        "name":"Flying Go Round",
+        "info":"The term arises from the traditional use of traffic patterns at airfields. A landing aircraft will first join the traffic pattern/circuit pattern and prepare for landing.",
+        "img":"https://i.ibb.co/1ZVcKps/Flying-Go-Around-1-300x300.jpg",
+        "price":150
+    },
+    {
+        "name":"Tilt a Whirl",
+        "info":"Tilt-A-Whirl is a flat ride similar to the Waltzer in Europe, designed for commercial use at amusement parks, fairs, and carnivals, in which it is commonly found.",
+        "img":"https://i.ibb.co/pLCXtJC/Tilt-a-Whirl-1-300x300.jpg",
+        "price":250
+    },
+    {
+        "name":"Zip Slide",
+        "info":"We will be sending out voucher codes to enable you to rebook your experience on a later date. These will be sent out via email later over the weekend.",
+        "img":"https://i.ibb.co/4KMcmQc/ZIP-slide-1-300x300.jpg",
+        "price":200
+    }
+]
