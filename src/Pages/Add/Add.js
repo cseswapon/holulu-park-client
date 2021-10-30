@@ -2,14 +2,17 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './Add.css';
+import { useHistory } from 'react-router';
 const Add = () => {
     const { register, handleSubmit,reset } = useForm();
+    const history = useHistory();
     const onSubmit = (data) => {
         console.log(data)
-        axios.post('http://localhost:4582/service',data)
+        axios.post('https://blooming-temple-57474.herokuapp.com/service',data)
         .then((result) => {
         console.log(result?.data?.insertedId);
         })
+        history.push('/home')
         reset()
     };
     return (
@@ -18,11 +21,11 @@ const Add = () => {
             <div>
                 <div className="add-form text-center">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("name")} placeholder="Name" />
-                        <textarea {...register("info")} placeholder="Details" />
-                        <input {...register("img")} placeholder="img-url size 300px X 300px" />
-                        <input {...register("price")} placeholder="price" />
-                        <input className="btn btn-primary" type="submit" />
+                        <input {...register("name")} placeholder="Name" required/>
+                        <textarea {...register("info")} placeholder="Details" required/>
+                        <input {...register("img")} placeholder="img-url size 300px X 300px" required/>
+                        <input {...register("price")} placeholder="price" required/>
+                        <input className="btn btn-primary" type="submit" required/>
                     </form>
                 </div>
             </div>

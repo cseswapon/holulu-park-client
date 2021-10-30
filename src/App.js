@@ -13,6 +13,9 @@ import Order from './Pages/Order/Order';
 import Add from './Pages/Add/Add';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import About from './Pages/About/About';
+import Support from './Pages/Support/Support';
+import Help from './Pages/Help/Help';
 
 function App() {
   return (
@@ -26,6 +29,15 @@ function App() {
               </Route>
               <Route exact path="/home">
                 <Home></Home>
+              </Route>
+              <Route exact path="/about">
+                <About></About>
+              </Route>
+              <Route exact path="/support">
+                <Support></Support>
+              </Route>
+              <Route exact path="/help">
+                <Help></Help>
               </Route>
               <Route exact path="/login">
                 <Login></Login>

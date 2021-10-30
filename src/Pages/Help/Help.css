@@ -1,0 +1,14 @@
+.help-img img {
+  height: 500px;
+}
+.helpful-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  padding-right: 40px;
+}
+@media screen and (max-width: 480px) {
+  .helpful-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

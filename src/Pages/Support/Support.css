@@ -1,0 +1,14 @@
+.support-img img {
+  height: 600px;
+}
+.support-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .support-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

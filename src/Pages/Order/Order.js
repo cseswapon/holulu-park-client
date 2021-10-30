@@ -7,7 +7,7 @@ const Order = () => {
     const [person, setPerson] = useState([]);
     const { user } = useAuth();
     useEffect(() => {
-        fetch('http://localhost:4582/add')
+        fetch('https://blooming-temple-57474.herokuapp.com/add')
         .then(result=>result.json())
         .then(data=>setPerson(data))
     },[])

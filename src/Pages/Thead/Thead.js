@@ -5,7 +5,7 @@ const Thead = (props) => {
     const cancelOrder = (id) => {
         const promice = window.confirm("Are You Sure Canceled")
         if (promice) {
-            fetch(`http://localhost:4582/add/${id}`, {
+            fetch(`https://blooming-temple-57474.herokuapp.com/add/${id}`, {
             method: 'DELETE',
             }).then(res => res.json())
             .then(data => {

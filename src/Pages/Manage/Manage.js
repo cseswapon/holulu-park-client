@@ -1,14 +1,25 @@
 import React,{useState,useEffect} from 'react';
-import { Table } from 'react-bootstrap';
+import { Table,Spinner } from 'react-bootstrap';
 import Allorder from '../Allorder/Allorder';
 
 const Manage = () => {
+    const [isLoading,setIsLoading] = useState(true)
     const [user, setUser] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4582/add')
+        fetch('https://blooming-temple-57474.herokuapp.com/add')
         .then(res => res.json())
-        .then(data=>setUser(data))
-    },[])
+            .then(data => {
+                setUser(data)
+                setIsLoading(false);
+            })
+    }, [])
+    if(isLoading){
+        return <div className="text-center my-5 py-5">
+            <div className="my-3">
+                <Spinner animation="grow" variant="danger" />
+            </div>     
+        </div>
+    }
     return (
         <div className="container mb-4">
             <h1 className="fw-bold text-center my-4 text-muted service-product">Manage All Order</h1>

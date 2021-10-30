@@ -9,7 +9,7 @@ const Allorder = (props) => {
     const deleteCancel = (id) => {
         const process = window.confirm("Are You Sure Canceled")
         if (process) {
-            fetch(`http://localhost:4582/add/${id}`, {
+            fetch(`https://blooming-temple-57474.herokuapp.com/add/${id}`, {
             method : "DELETE"
             })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const Allorder = (props) => {
         }
     }
     useEffect(() => {
-        fetch('http://localhost:4582/add')
+        fetch('https://blooming-temple-57474.herokuapp.com/add')
         .then(res => res.json())
         .then(data=>setUsers(data))
     },[])
@@ -33,7 +33,7 @@ const Allorder = (props) => {
         const finding = users.find(usering => usering._id === id);
         finding.status = "Approved";
         console.log(finding);
-        fetch('http://localhost:4582/process', {
+        fetch('https://blooming-temple-57474.herokuapp.com/process', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
+import {Spinner} from 'react-bootstrap';
 import axios from 'axios';
 import './PlaceOrder.css';
 const PlaceOrder = () => {
@@ -9,12 +10,14 @@ const PlaceOrder = () => {
     const  {id}  = useParams();
     // console.log(id);
     const [service, setService] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         fetch(`https://blooming-temple-57474.herokuapp.com/service/${id}`)
         .then(res => res.json())
         .then(data => {
         // console.log(data);
-        setService(data);
+            setService(data);
+            setIsLoading(false);
         })
     }, [id])
     const { img, info, name, price } = service;
@@ -22,11 +25,19 @@ const PlaceOrder = () => {
     const { register, handleSubmit} = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:4582/add', data)
-        .then(()=> {})
+        axios.post('https://blooming-temple-57474.herokuapp.com/add', data)
+            .then(() => { })
+        setIsLoading(false);
         history.push('/order')
     };
     // console.log(name);
+    if (isLoading) {
+        return <div className="text-center my-5 py-5">
+            <div className="my-3">
+                <Spinner animation="grow" variant="danger" />
+            </div>     
+        </div>
+    }
     return (
         <div className="container">
             <div className="text-center my-3">
