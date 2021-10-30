@@ -8,6 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProviders from './Pages/Context/Authproviders';
+import Manage from './Pages/Manage/Manage';
+import Order from './Pages/Order/Order';
+import Add from './Pages/Add/Add';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -28,6 +33,18 @@ function App() {
               <Route exact path="/singup">
                 <Register></Register>
               </Route>
+              <PrivateRoute exact path="/service/:id">
+                <PlaceOrder></PlaceOrder>
+              </PrivateRoute>
+              <PrivateRoute exact path="/manage">
+                <Manage></Manage>
+              </PrivateRoute>
+              <PrivateRoute exact path="/order">
+                <Order></Order>
+              </PrivateRoute>
+              <PrivateRoute exact path="/add">
+                <Add></Add>
+              </PrivateRoute>
               <Route exact path="*">
                 <Notfound></Notfound>
               </Route>

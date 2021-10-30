@@ -1,10 +1,14 @@
 import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 const Login = () => {
     const [email,setEmail] = useState('')
     const [password, setPassword] = useState('')
     const { googleSingin, singin } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    // console.log(location?.state?.from || '/home');
+    const redirect_uri = location?.state?.from || '/home';
     const emailHandel = e => {
         setEmail(e.target.value);
     }
@@ -13,9 +17,18 @@ const Login = () => {
     }
     const handelFrom = e => {
         e.preventDefault();
-        singin(email, password);
+        singin(email, password)
+        .then(() => {
+            history.push(redirect_uri);
+            })
         e.target.reset();
     };
+    const googleLogin = () => {
+        googleSingin()
+        .then(() => {
+            history.push(redirect_uri);
+        })
+    }
     return (
          <div className="container w-50 my-5">
             <h1 className="fw-bold text-primary">Please Login</h1>
@@ -32,7 +45,7 @@ const Login = () => {
             </form>
             <h4 className="text-center text-danger">----- or -----</h4>
             <div className="text-center">
-                <button onClick={googleSingin} className="btn btn-warning m-2"><i className="fab fa-google-plus text-light"></i></button>
+                <button onClick={googleLogin} className="btn btn-warning m-2"><i className="fab fa-google-plus text-light"></i></button>
                 <p>Create Account & Singup <Link to="/singup">Singup</Link></p>
             </div>
         </div>

@@ -11,14 +11,14 @@ const Manager = () => {
                 </p>
             </div><br />
             <div className="row mt-2">
-                <div className="col-md-6">
+                <div className="col-md-6 text-center">
                     <div className="card mb-3" style={{maxWidth:"540px"}}>
                         <div className="row g-0">
                             <div className="col-md-4">
                             <img src={img1} className="img-fluid rounded-start" alt="not found"/>
                             </div>
                             <div className="col-md-8">
-                            <div className="card-body">
+                            <div className="card-body text-lg-start">
                                 <h5 className="card-title text-muted">Swapon Saha</h5>
                                 <p className="card-text text-muted">Chairman <br/>Holulu Theme Park Ltd.</p>
                             </div>
@@ -26,14 +26,14 @@ const Manager = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 text-center">
                     <div className="card mb-3" style={{maxWidth:"540px"}}>
                         <div className="row g-0">
                             <div className="col-md-4">
                             <img src={img2} className="img-fluid rounded-start" alt="not found"/>
                             </div>
                             <div className="col-md-8">
-                            <div className="card-body">
+                            <div className="card-body text-lg-start">
                                 <h5 className="card-title text-muted">Jolin Tsai</h5>
                                 <p className="card-text text-muted">Co-Founder <br/>Holulu Theme Park Ltd.</p>
                             </div>

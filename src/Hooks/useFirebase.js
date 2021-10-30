@@ -7,16 +7,10 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
     const [user, setUser] = useState('');
     const [error, setError] = useState('');
+    const [isLoading, setisLoading] = useState(true);
     // google singIn
     const googleSingin = () => {
-        signInWithPopup(auth, googleProvider)
-        .then((result) => {
-            setUser(result.user)
-            console.log(result.user)
-        }).catch((error) => {
-            setError(error.message)
-            console.log(error.message)
-        });
+        return signInWithPopup(auth, googleProvider)
     }
     // email and password authentication
     const loginfromhandel = (name, email, pass) => {
@@ -40,14 +34,7 @@ const useFirebase = () => {
     }
     // login email password
     const singin = (email,password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                console.log(result.user)
-                setUser(result.user)
-            }).catch((error) => {
-                console.log(error.message);
-                setError(error.message);
-            })
+        return signInWithEmailAndPassword(auth, email, password)
     }
     // observe with user
     useEffect(() => {
@@ -57,8 +44,9 @@ const useFirebase = () => {
             } else {
                 setError('')
             }
+            setisLoading(false);
         });
-    },[])
+    },[isLoading])
     // logout
     const logout = () => {
         signOut(auth).then(() => {
@@ -73,7 +61,8 @@ const useFirebase = () => {
         googleSingin,
         loginfromhandel,
         singin,
-        logout
+        logout,
+        isLoading
     }
 }
 export default useFirebase;

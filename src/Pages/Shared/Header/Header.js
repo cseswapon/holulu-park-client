@@ -4,7 +4,9 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import TopBanner from '../TopBanner/TopBanner';
 import logo from '../../../image/logo/phpThumb_generated_thumbnailjpg.png'
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 const Header = () => {
+    const { user,logout } = useAuth();
     return (
         <div>
             <TopBanner></TopBanner>
@@ -21,7 +23,7 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto navbar-link">
+                        <Nav className="ms-auto navbar-link align-items-center">
                             <NavLink
                             to="/home"
                             activeStyle={{
@@ -58,15 +60,48 @@ const Header = () => {
                             >
                             Help
                             </NavLink>
-                            <NavLink
-                            to="/login"
+                            {
+                                user?.email&&<span>
+                                <NavLink
+                            to="/order"
                             activeStyle={{
                                 fontWeight: "bold",
                                 borderBottom : "2px solid blue"
                             }}
                             >
-                            Login
+                            My Order
                             </NavLink>
+                            <NavLink
+                            to="/manage"
+                            activeStyle={{
+                                fontWeight: "bold",
+                                borderBottom : "2px solid blue"
+                            }}
+                            >
+                            All Order
+                            </NavLink>
+                            <NavLink
+                            to="/add"
+                            activeStyle={{
+                                fontWeight: "bold",
+                                borderBottom : "2px solid blue"
+                            }}
+                            >
+                            Add New
+                            </NavLink>
+                            </span>
+                            }
+                            {
+                                user?.email&&<span className="fw-bold text-primary m-2"><i className="fas fa-user text-danger"></i> {user.displayName}</span>
+                            }
+                            {
+                                user?.email ? <button className="btn btn-danger" onClick={logout}><i className="fas fa-sign-out-alt"></i> Logout</button>:<NavLink
+                                            to="/login"
+                                            className="btn btn-primary"
+                                            >
+                                            <i className="fas fa-unlock"></i> Login
+                                        </NavLink>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
