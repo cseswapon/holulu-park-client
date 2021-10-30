@@ -23,7 +23,7 @@ const Manage = () => {
     return (
         <div className="container mb-4">
             <h1 className="fw-bold text-center my-4 text-muted service-product">Manage All Order</h1>
-            <Table bordered >
+            <Table striped bordered hover responsive="md" >
                 <thead>
                     <tr>
                         <th style={{textAlign:"center"}}>ID</th>
