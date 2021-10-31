@@ -64,9 +64,9 @@ const PlaceOrder = () => {
                 <div style={{borderLeft:"1px solid gray"}} className="col-md-4 col-12 place-order text-center">
                     <h1 className="text-center text-primary fw-bold">Place Order</h1><hr />
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 20 })} />
-                        <input defaultValue={user?.email} {...register("email")} />
-                        <input defaultValue="Pending" {...register("status")} />
+                        <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 20 })} readOnly/>
+                        <input defaultValue={user?.email} {...register("email")} readOnly/>
+                        <input defaultValue="Pending" {...register("status")} readOnly/>
                         <input {...register("order")} placeholder={`"${name}" Please Type`} required />
                         <input className="btn btn-outline-primary" type="submit" value="Place Order" />
                     </form>
