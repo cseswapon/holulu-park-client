@@ -5,7 +5,7 @@ const Allorder = (props) => {
     const { _id, name, email, order, status } = props.use;
     const [users,setUsers] = useState([])
     const { user,set } = props;
-    console.log(user);
+    // console.log(user);
     const deleteCancel = (id) => {
         const process = window.confirm("Are You Sure Canceled")
         if (process) {

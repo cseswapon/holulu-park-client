@@ -27,8 +27,8 @@ const PlaceOrder = () => {
         console.log(data);
         axios.post('https://blooming-temple-57474.herokuapp.com/add', data)
             .then(() => { })
-        setIsLoading(false);
-        history.push('/order')
+            history.push('/order')
+            setIsLoading(false);
     };
     // console.log(name);
     if (isLoading) {
