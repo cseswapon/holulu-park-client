@@ -24,7 +24,7 @@ const PlaceOrder = () => {
     const history = useHistory();
     const { register, handleSubmit} = useForm();
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         axios.post('https://blooming-temple-57474.herokuapp.com/add', data)
             .then(() => { })
             history.push('/order')
