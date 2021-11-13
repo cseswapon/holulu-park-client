@@ -3,7 +3,7 @@ import { Badge } from 'react-bootstrap';
 
 const Allorder = (props) => {
     const { _id, name, email, order, status } = props.use;
-    const { user,set } = props;
+    const { user,set,index } = props;
     // console.log(user);
     const deleteCancel = (id) => {
         const process = window.confirm("Are You Sure Canceled")
@@ -39,7 +39,7 @@ const Allorder = (props) => {
     }
     return (
         <tr>
-            <td style={{textAlign:"center"}}>{_id}</td>
+            <td style={{textAlign:"center"}}>{index+1}</td>
             <td style={{textAlign:"center"}}>{name}</td>
             <td style={{textAlign:"center"}}>{email}</td>
             <td style={{textAlign:"center"}}>{order}</td>

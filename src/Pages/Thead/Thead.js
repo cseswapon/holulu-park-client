@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge } from 'react-bootstrap';
 const Thead = (props) => {
-    const { use, set, person } = props;
+    const { use, set, person,index } = props;
     const cancelOrder = (id) => {
         const promice = window.confirm("Are You Sure Canceled")
         if (promice) {
@@ -19,7 +19,7 @@ const Thead = (props) => {
     }
     return (
         <tr>
-            <td style={{textAlign:"center"}}>{ use._id}</td>
+            <td style={{textAlign:"center"}}>{ index + 1 }</td>
             <td style={{textAlign:"center"}}>{ use.name}</td>
             <td style={{textAlign:"center"}}>{ use.email}</td>
             <td style={{textAlign:"center"}}>{ use.order}</td>
