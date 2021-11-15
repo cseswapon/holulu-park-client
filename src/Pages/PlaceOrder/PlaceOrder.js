@@ -31,7 +31,8 @@ const PlaceOrder = () => {
     axios
       .post("https://blooming-temple-57474.herokuapp.com/add", data)
       .then(() => {});
-    history.push("/order");
+    alert("Order Place Successfully");
+    history.push("/home");
     setIsLoading(false);
   };
   // console.log(name);
@@ -97,11 +98,14 @@ const PlaceOrder = () => {
             />
             <input defaultValue={user?.email} {...register("email")} readOnly />
             <input defaultValue="Pending" {...register("status")} readOnly />
-            <input
-              {...register("order")}
-              placeholder={`"${name}" Please Type`}
-              required
-            />
+            {name && (
+              <input
+                {...register("order")}
+                // placeholder={`"${name}" Please Type`}
+                defaultValue={name}
+                required
+              />
+            )}
             <input
               className="btn btn-outline-primary"
               type="submit"
