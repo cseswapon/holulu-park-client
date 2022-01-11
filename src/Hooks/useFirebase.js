@@ -24,7 +24,7 @@ const useFirebase = () => {
   // email and password authentication
   const loginfromhandel = (name, email, pass) => {
     createUserWithEmailAndPassword(auth, email, pass)
-      .then((result) => {
+      .then(() => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         setUsername(name);
@@ -55,8 +55,8 @@ const useFirebase = () => {
         setUser(user);
       } else {
         setError("");
-        setisLoading(false);
       }
+      setisLoading(false);
     });
   }, [auth]);
   // logout
